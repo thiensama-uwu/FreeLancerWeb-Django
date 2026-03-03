@@ -1,0 +1,25 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="#" class="text-decoration-none">
+                {{ job.title }}
+            </a>
+        </h5>
+
+        <p class="text-muted small">
+            {{ job.client_name }} • {{ job.created_at|timesince }} trước
+        </p>
+
+        <p>{{ job.description|truncatewords:20 }}</p>
+
+        <div class="d-flex justify-content-between">
+            <span class="fw-bold text-success">
+                ${{ job.budget }}
+            </span>
+
+            <a href="#" class="btn btn-sm btn-outline-primary">
+                Xem chi tiết
+            </a>
+        </div>
+    </div>
+</div>

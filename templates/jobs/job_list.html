@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Danh sách việc làm{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">Danh sách công việc</h2>
+
+{% for job in jobs %}
+{% include "jobs/job_card.html" %}
+{% empty %}
+<p>Không có công việc nào.</p>
+{% endfor %}
+
+{% endblock %}

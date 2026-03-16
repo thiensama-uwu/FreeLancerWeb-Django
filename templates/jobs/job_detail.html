@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ job.title }}{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <!-- Title -->
+            <h2 class="card-title mb-3">
+                {{ job.title }}
+            </h2>
+
+            <!-- Client + Time -->
+            <p class="text-muted">
+                Đăng bởi <strong>{{ job.client_name }}</strong>
+                • {{ job.created_at|timesince }} trước
+            </p>
+
+            <hr>
+
+            <!-- Budget -->
+            <div class="mb-3">
+                <span class="badge bg-success fs-6">
+                    Ngân sách: ${{ job.budget }}
+                </span>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+                <h5>Mô tả công việc</h5>
+                <p>
+                    {{ job.description }}
+                </p>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="d-flex justify-content-between">
+
+                <a href="{% url 'job_list' %}" class="btn btn-secondary">
+                    ← Quay lại danh sách
+                </a>
+
+                <a href="#" class="btn btn-primary">
+                    Ứng tuyển ngay
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
